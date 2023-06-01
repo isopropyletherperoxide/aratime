@@ -18,6 +18,7 @@ aratime 10 Discord firefox-bin
 An ``aratime_wrapper`` script is provided, which automatically disowns the process from the shell that called it. 
 
 ### Installation 
+(In the root directory of the repository)
 
 ```bash 
 make && sudo make install
