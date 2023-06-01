@@ -1,4 +1,4 @@
-### Aratime 
+## Aratime 
 
 A simple, POSIX-compatible tool that provides a time limit for a running application.
 
