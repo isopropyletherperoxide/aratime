@@ -1,7 +1,7 @@
 build: 
-	cc digital_wellbeing.c -o digital_wellbeing
+	cc aratime.c -o aratime
 install: 
-	cp -f digital_wellbeing /opt/bin/
+	cp -f aratime /opt/bin/
 clean: 
-	rm digital_wellbeing
+	rm aratime
 
