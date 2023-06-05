@@ -5,16 +5,21 @@
 #include <unistd.h>
 
 int minutes_to_seconds(int input);
-
 void kill_process(char *);
+void countdown_timer(int);
+char *minutes_to_str(int);
 
 int main(int argc, char *argv[]) {
-        if (argc < 3) {
-                printf("Not enough arguments!\n\nUsage: nohup digital_wellbeing time(in minutes) proc_name1 proc_name2 proc_name_n\n\nExample: nohup digital_wellbeing 30 Discord firefox\n");
-                exit(1);
-        }
+  if (argc < 3) {
+    printf("Not enough arguments!\n\nUsage: nohup digital_wellbeing time(in "
+           "minutes) proc_name1 proc_name2 proc_name_n\n\nExample: nohup "
+           "digital_wellbeing 30 Discord firefox\n");
+    exit(1);
+  }
   int sleep_minutes = atoi(argv[1]);
-  sleep(minutes_to_seconds(sleep_minutes));
+  if (sleep_minutes != 0 ){
+  countdown_timer(minutes_to_seconds(sleep_minutes));
+  }
   while (1) {
     for (int i = 2; i < argc; i++) {
       kill_process(argv[i]);
@@ -47,3 +52,13 @@ void kill_process(char *process) {
 }
 
 int minutes_to_seconds(int input) { return input * 60; }
+
+void countdown_timer(int seconds) {
+  for (int i = seconds - 1; i >= 0; i--) {
+    fputs("\b\b\b\b\b\b", stdout);
+    printf("%i:%02d", i / 60, (i - i / 60));
+    fflush(stdout);
+    sleep(1);
+  }
+ fputs("\n", stdout);
+}
