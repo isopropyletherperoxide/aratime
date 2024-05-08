@@ -11,9 +11,9 @@ char *minutes_to_str(int);
 
 int main(int argc, char *argv[]) {
   if (argc < 3) {
-    printf("Not enough arguments!\n\nUsage: nohup digital_wellbeing time(in "
+    printf("Not enough arguments!\n\nUsage: nohup aratime time(in "
            "minutes) proc_name1 proc_name2 proc_name_n\n\nExample: nohup "
-           "digital_wellbeing 30 Discord firefox\n");
+           "aratime 30 Discord firefox\n");
     exit(1);
   }
   int sleep_minutes = atoi(argv[1]);
