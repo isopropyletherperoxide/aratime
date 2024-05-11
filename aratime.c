@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 int minutes_to_seconds(int input);
 void kill_process(char *);
@@ -17,8 +18,8 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
   int sleep_minutes = atoi(argv[1]);
-  if (sleep_minutes != 0 ){
-  countdown_timer(minutes_to_seconds(sleep_minutes));
+  if (sleep_minutes != 0) {
+    countdown_timer(minutes_to_seconds(sleep_minutes));
   }
   while (1) {
     for (int i = 2; i < argc; i++) {
@@ -27,6 +28,10 @@ int main(int argc, char *argv[]) {
     sleep(10);
   }
   return 0;
+}
+
+bool find_process(char *process) {
+        return true;
 }
 
 void kill_process(char *process) {
@@ -60,5 +65,5 @@ void countdown_timer(int seconds) {
     fflush(stdout);
     sleep(1);
   }
- fputs("\n", stdout);
+  fputs("\n", stdout);
 }

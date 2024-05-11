@@ -24,4 +24,9 @@ An ``aratime_wrapper`` script is provided, which automatically disowns the proce
 make && sudo make install
 ```
 
+#### Kernel Module 
+Optionally, there is a kernel module provided that makes the program unkillable even with ``sudo``. To compile it run ``make`` in the ``kernel`` folder (**Linux headers required!**). Load the module with ``insmod process.ko`` after launching ``aratime``. This has been tested to work on Kernel 6.6.21 only and I do not take any responsibility for anything that may happen.   
+
+
+
 
